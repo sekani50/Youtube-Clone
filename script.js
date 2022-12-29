@@ -174,9 +174,9 @@ class Videos {
         //console.log(vid_data.channelThumb);
         //console.log(this.calcDate(vid_data.snippet.publishedAt));
         //console.log(this.calcViews(vid_data.statistics.viewCount));
-        document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer max-[450px]:w-[100%]">
+        document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[25%] max-[450px]:w-[100%]">
                             <div class="image-box relative">
-                                <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] w-[300px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
+                                <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] w-[330x] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
 
                                 <div class="display-hover bg-white shadow-xl rounded-t-[20px] z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
