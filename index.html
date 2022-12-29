@@ -1,0 +1,1076 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>YouTube Clone</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+
+        @media (max-width:1289px) {
+
+            body .left-icons-grandparent .small-left-icons {
+                display: block;
+            }
+
+
+            body .left-icons-grandparent .left-icons-parent {
+                display: none;
+                background: rgba(0,0,0,0.5);
+            }
+
+                body .left-icons-grandparent .left-icons-parent:hover::-webkit-scrollbar {
+                    display: none;
+                }
+
+                body .left-icons-grandparent .left-icons-parent .std::-webkit-scrollbar {
+                    display: none;
+                }
+
+                body .left-icons-grandparent .left-icons-parent .std:hover::-webkit-scrollbar {
+                    display: block;
+                }
+
+            body .left-icons-grandparent .left-icons-parent {
+                -webkit-animation-duration: 0.2s;
+                animation-duration: 0.2s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .swipeIn {
+                animation-name: swipeIn;
+                -webkit-animation-name: swipeIn;
+            }
+
+            @keyframes swipeIn {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                100% {
+                    transform: translateX(0px);
+                }
+            }
+
+
+            @-webkit-keyframes swipeIn {
+                0% {
+                    -webkit-transform: translateX(-100%);
+                }
+
+                100% {
+                    -webkit-transform: translateX(0px);
+                }
+            }
+        }
+
+
+
+        @media (max-width:1024px) {
+
+            body .left-icons-grandparent .small-left-icons {
+                display: block;
+            }
+
+            body .left-icons-grandparent .left-icons-parent:hover::-webkit-scrollbar {
+                display: none;
+            }
+
+            body .left-icons-grandparent .left-icons-parent {
+                display: none;
+                background: rgba(0,0,0,0.5);
+            }
+
+                body .left-icons-grandparent .left-icons-parent .std::-webkit-scrollbar {
+                    display: none;
+                }
+
+                body .left-icons-grandparent .left-icons-parent .std:hover::-webkit-scrollbar {
+                    display: block;
+                }
+        }
+
+        @media (max-width:768px) {
+
+            body .left-icons-grandparent .small-left-icons {
+                display: none;
+            }
+
+            body .left-icons-grandparent .left-icons-parent:hover::-webkit-scrollbar {
+                display: none;
+            }
+
+            body .left-icons-grandparent .left-icons-parent {
+                display: none;
+                background: rgba(0,0,0,0.5);
+            }
+
+                body .left-icons-grandparent .left-icons-parent .std::-webkit-scrollbar {
+                    display: none;
+                }
+
+                body .left-icons-grandparent .left-icons-parent .std:hover::-webkit-scrollbar {
+                    display: block;
+                }
+        }
+
+     
+        @media (max-width:650px) {
+            body .search-box {
+                display: none;
+                width: 100%;
+                justify-content: center;
+            }
+
+                body .search-box input {
+                    width: 70%;
+                }
+
+                body .search-box #bef-search {
+                    left: 11%;
+                }
+
+                body .search-box .close {
+                    display: none;
+                    left: 73%;
+                }
+
+            body .last .mobile-mic {
+                display: block;
+            }
+
+            body .last .mobile-searchicon {
+                display: block;
+            }
+
+            body .search-box .back-bar {
+                display: block;
+                margin-right: 3%;
+            }
+
+            body .search-box .mic .mic-desc {
+                left: -10em;
+            }
+        }
+        @media (max-width:450px) {
+            html,body {
+                width:100%;
+                overflow:hidden;
+            }
+            html {
+                overflow:hidden;
+            }
+            body .search-box #bef-search {
+                left: 15%;
+            }
+
+            body ::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+                background:transparent;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .thumb-image .show-name {
+                display: none;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .thumb-image:hover .show-name {
+                display: none;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .title .title-show {
+                display: none;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .title:hover .title-show {
+                display: none;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .channel-name .channel-description {
+                display: none;
+            }
+
+            body .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .channel-name:hover .channel-description {
+                display: none;
+            }
+
+            footer {
+                position: absolute;
+                bottom: 0px;
+                width: 100%;
+                background: white;
+                box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
+            }
+        
+
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-weight: 400;
+            top: 0;
+            left: 0;
+            font-family: Roboto,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        html {
+            overflow: hidden;
+        }
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .todescript .description {
+            display: none;
+        }
+
+        .todescript:hover .description {
+            display: block;
+        }
+
+        .last .mobile-mic {
+            display: none;
+        }
+
+        .last .mobile-searchicon {
+            display: none;
+        }
+
+        .search-box .back-bar {
+            display: none;
+        }
+
+        .search-box .close {
+            display: none;
+        }
+
+        .horizontal-btns {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: scroll;
+        }
+
+            .horizontal-btns::-webkit-scrollbar {
+                display: none;
+            }
+
+        .show-left {
+            display: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 9px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background-color: rgba(245,245,245,0.5);
+        }
+
+    
+        .left-icons-grandparent .left-icons-parent .std::-webkit-scrollbar {
+            display: none;
+        }
+
+        .left-icons-grandparent .left-icons-parent .std:hover::-webkit-scrollbar {
+            display: block;
+        }
+
+      
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .thumb-image .show-name {
+            display:none;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .thumb-image:hover .show-name {
+            display: block;
+        }
+
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .title .title-show {
+            display:none;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .title:hover .title-show {
+            display: block;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .channel-name .channel-description {
+            display:none;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .th-title .title-view .channel-name:hover .channel-description {
+            display:block;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .image-box .hover-to-play {
+            display:none;
+        }
+        .horiz-btn-parent .videos-box .videos .video-container .image-box:hover .hover-to-play {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-head w-full h-20 max-[450px]:h-[3rem] mx-[1.5%] max-[450px]:mx-0 max-[450px]:shadow-[0_0_6px__rgba(0,0,0,0.5)]">
+        <div class="flex  w-[97%] h-[75%] max-[450px]:h-[100%]  justify-between items-center">
+            <div class="flex  max-[450px]:justify-start items-center w-[25%] h-1/10 mr-10 max-[450px]:ml-[0px] ml-[1px] first">
+                <button class="menu max-[450px]:hidden px-2 py-2 h-12 hover:bg-slate-200 cursor-pointer hover:rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[100%] m-auto h-8" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                    </svg>
+                </button>
+                <div class="w-[50%] h-9 logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-2/10 h-9 max-[450px]:h-[30px]" xml:space="preserve" y="0" x="0" id="Layer_1" version="1.1" viewBox="-57.15 -21.25 495.3 127.5">
+                    <style id="style7427" type="text/css">
+                        .st2 {
+                            fill: #282828
+                        }
+</style>
+                    <g id="g7433">
+                    <path id="path7429" d="M118.9 13.3c-1.4-5.2-5.5-9.3-10.7-10.7C98.7 0 60.7 0 60.7 0s-38 0-47.5 2.5C8.1 3.9 3.9 8.1 2.5 13.3 0 22.8 0 42.5 0 42.5s0 19.8 2.5 29.2C3.9 76.9 8 81 13.2 82.4 22.8 85 60.7 85 60.7 85s38 0 47.5-2.5c5.2-1.4 9.3-5.5 10.7-10.7 2.5-9.5 2.5-29.2 2.5-29.2s.1-19.8-2.5-29.3z" fill="red" /><path id="polygon7431" fill="#fff" d="M48.6 24.3v36.4l31.6-18.2z" /></g><g id="g7451"><g id="g7449"><path id="path7435" d="M176.3 77.4c-2.4-1.6-4.1-4.1-5.1-7.6-1-3.4-1.5-8-1.5-13.6v-7.7c0-5.7.6-10.3 1.7-13.8 1.2-3.5 3-6 5.4-7.6 2.5-1.6 5.7-2.4 9.7-2.4 3.9 0 7.1.8 9.5 2.4 2.4 1.6 4.1 4.2 5.2 7.6 1.1 3.4 1.7 8 1.7 13.8v7.7c0 5.7-.5 10.2-1.6 13.7-1.1 3.4-2.8 6-5.2 7.6-2.4 1.6-5.7 2.4-9.8 2.4-4.2-.1-7.6-.9-10-2.5zm13.5-8.4c.7-1.7 1-4.6 1-8.5V43.9c0-3.8-.3-6.6-1-8.4-.7-1.8-1.8-2.6-3.5-2.6-1.6 0-2.8.9-3.4 2.6-.7 1.8-1 4.6-1 8.4v16.6c0 3.9.3 6.8 1 8.5.6 1.7 1.8 2.6 3.5 2.6 1.6 0 2.7-.8 3.4-2.6z" class="st2" /><path id="path7437" d="M360.9 56.3V59c0 3.4.1 6 .3 7.7.2 1.7.6 3 1.3 3.7.6.8 1.6 1.2 3 1.2 1.8 0 3-.7 3.7-2.1.7-1.4 1-3.7 1.1-7l10.3.6c.1.5.1 1.1.1 1.9 0 4.9-1.3 8.6-4 11-2.7 2.4-6.5 3.6-11.4 3.6-5.9 0-10-1.9-12.4-5.6-2.4-3.7-3.6-9.4-3.6-17.2v-9.3c0-8 1.2-13.8 3.7-17.5 2.5-3.7 6.7-5.5 12.6-5.5 4.1 0 7.3.8 9.5 2.3 2.2 1.5 3.7 3.9 4.6 7 .9 3.2 1.3 7.6 1.3 13.2v9.1h-20.1zm1.5-22.4c-.6.8-1 2-1.2 3.7-.2 1.7-.3 4.3-.3 7.8v3.8h8.8v-3.8c0-3.4-.1-6-.3-7.8-.2-1.8-.7-3-1.3-3.7-.6-.7-1.6-1.1-2.8-1.1-1.4-.1-2.3.3-2.9 1.1z" class="st2" /><path id="path7439" d="M147.1 55.3L133.5 6h11.9l4.8 22.3c1.2 5.5 2.1 10.2 2.7 14.1h.3c.4-2.8 1.3-7.4 2.7-14l5-22.4h11.9L159 55.3v23.6h-11.8V55.3z" class="st2" /><path id="path7441" d="M241.6 25.7V79h-9.4l-1-6.5h-.3c-2.5 4.9-6.4 7.4-11.5 7.4-3.5 0-6.1-1.2-7.8-3.5-1.7-2.3-2.5-5.9-2.5-10.9V25.7h12v39.1c0 2.4.3 4.1.8 5.1s1.4 1.5 2.6 1.5c1 0 2-.3 3-1 1-.6 1.7-1.4 2.1-2.4V25.7z" class="st2" /><path id="path7443" d="M303.1 25.7V79h-9.4l-1-6.5h-.3c-2.5 4.9-6.4 7.4-11.5 7.4-3.5 0-6.1-1.2-7.8-3.5-1.7-2.3-2.5-5.9-2.5-10.9V25.7h12v39.1c0 2.4.3 4.1.8 5.1s1.4 1.5 2.6 1.5c1 0 2-.3 3-1 1-.6 1.7-1.4 2.1-2.4V25.7z" class="st2" /><path id="path7445" d="M274.2 15.7h-11.9v63.2h-11.7V15.7h-11.9V6h35.5z" class="st2" /><path id="path7447" d="M342.8 34.2c-.7-3.4-1.9-5.8-3.5-7.3s-3.9-2.3-6.7-2.3c-2.2 0-4.3.6-6.2 1.9-1.9 1.2-3.4 2.9-4.4 4.9h-.1V3.3h-11.6v75.6h9.9l1.2-5h.3c.9 1.8 2.3 3.2 4.2 4.3 1.9 1 3.9 1.6 6.2 1.6 4.1 0 7-1.9 8.9-5.6 1.9-3.7 2.9-9.6 2.9-17.5v-8.4c-.1-6.1-.4-10.8-1.1-14.1zm-11 21.7c0 3.9-.2 6.9-.5 9.1-.3 2.2-.9 3.8-1.6 4.7-.8.9-1.8 1.4-3 1.4-1 0-1.9-.2-2.7-.7-.8-.5-1.5-1.2-2-2.1V38.1c.4-1.4 1.1-2.6 2.1-3.6 1-.9 2.1-1.4 3.2-1.4 1.2 0 2.2.5 2.8 1.4.7 1 1.1 2.6 1.4 4.8.3 2.3.4 5.5.4 9.6v7z" class="st2" /></g></g></svg>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="flex w-[60%] h-10 mr-2 relative items-center search-box">
+                <button class="todescript relative hover:bg-slate-200 py-2 px-2 cursor-pointer rounded-full back-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class=" w-[90%] m-auto h-7" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description z-10 left-[4px] bottom-[-50px] text-sm px-1 py-2 text-center rounded text-slate-100 absolute">Back</span>
+                </button>
+
+                <div id="bef-search" class="absolute max-[450px]:top-[1%] w-[6%] h-10 max-[450px]:h-[10px] max-[450px]:bg-none rounded-l-full pt-2 before-search" style="display:none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6  m-auto">
+                        <path d="m19.45 19.9-6.25-6.25q-.75.65-1.725 1Q10.5 15 9.55 15q-2.3 0-3.9-1.6t-1.6-3.9q0-2.3 1.6-3.9T9.55 4q2.3 0 3.9 1.6t1.6 3.9q0 1.025-.375 2-.375.975-.975 1.65l6.25 6.25Zm-9.9-5.6q2.025 0 3.413-1.388Q14.35 11.525 14.35 9.5t-1.387-3.413Q11.575 4.7 9.55 4.7T6.138 6.087Q4.75 7.475 4.75 9.5t1.388 3.412Q7.525 14.3 9.55 14.3Z" />
+                    </svg>
+                </div>
+
+                <input class="w-[70%] max-xl:w-[60%] h-full max-lg:w-[40%] max-[450px]:text-[13px] max-[450px]:h-6 max-md:w-[20%] max-[450px]:pl-[4%] max-[450px]:w-[75%] text-xl rounded-l-full border-1 border-gray-400 ring-1 ring-gray-400 focus:outline-none focus:border-blue-700 focus:ring-1 focus:ring-blue-700 pl-[6%]" id="input-field" type="text" placeholder="Search" />
+                <button class="absolute top-0 left-[53%] hover:bg-slate-200 py-2 px-2 max-[450px]:p-3 cursor-pointer rounded-full close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class=" w-[90%] max-[450px]:h-6 m-auto h-7" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                    </svg>
+                </button>
+                <button class="todescript relative bg-slate-100 h-full max-[450px]:h-6 mr-5 w-[8%] border-1 max-[450px]:w-[10%] max-[450px]:p-[2px] border-gray-500 ring-1 ring-gray-500 rounded-r-full  hover:bg-slate-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-2/10 h-7 max-[450px]:h-5 m-auto" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description z-10 left-[-2px] bottom-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Search</span>
+                </button>
+                <div class="todescript relative bg-slate-50 rounded-full cursor-pointer px-2 py-2  hover:bg-slate-200 mic">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[80%] h-7 m-auto" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="mic-desc description z-10 left-[-20px] bottom-[-50px] text-sm px-1 py-2 w-40 text-center rounded text-slate-100 absolute">Search with your voice</span>
+                </div>
+
+            </div>
+            <div class="last flex justify-end w-[15%] max-md:w-[40%] max-[450px]:w-[30%]  max-lg:w-[20%] h-1/10">
+                <button class="todescript relative hover:bg-slate-200 py-2 px-2 cursor-pointer rounded-full mobile-searchicon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[90%] h-7  m-auto" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description z-10 left-[-2px] bottom-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Search</span>
+                </button>
+                <button class="todescript relative rounded-full  max-[450px]:hidden cursor-pointer px-2 pt-1  hover:bg-slate-200 mobile-mic">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[90%] h-7 m-auto" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description z-10 left-[-20px] bottom-[-50px] text-sm px-1 py-2 w-40 text-center rounded text-slate-100 absolute">Search with your voice</span>
+                </button>
+                <button class="todescript relative  max-[450px]:hidden hover:bg-slate-200 py-2 px-2 cursor-pointer rounded-full video-call">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[90%] m-auto h-7" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM15 16H5V8h10v8zm-6-1h2v-2h2v-2h-2V9H9v2H7v2h2z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description text-sm z-10 px-1 py-2 left-[-2px] bottom-[-50px] rounded text-slate-100 absolute">Create</span>
+                </button>
+                <button class="todescript relative ml-2 mr-2  max-[450px]:hidden hover:bg-slate-200 py-2 px-2 cursor-pointer rounded-full notification">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class=" w-[90%] m-auto h-7" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none" />
+                        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" />
+                    </svg>
+                    <span style="background:rgba(0,0,0,0.5)" class="description left-[-2px] z-10 bottom-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Notifications</span>
+                </button>
+
+                <button class="cursor-pointer profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" class="w-[100%] m-auto h-7" fill="#000000">
+                        <g><rect fill="none" height="24" width="24" /></g>
+                        <g>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z" />
+                        </g>
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="left-icons-grandparent flex flex-row h-full">
+        <div class="small-left-icons w-[8%] ml-1 hidden">
+            <div class="left-icons   relative min-w-max no-underline hover:bg-gray-200 hover:rounded-lg pr-1 py-3 text-center z-4 rounded-lg mt-4">
+
+                <div style="background-image:url('icons/home-fill.png')" class="m-auto pt-3 bg-[url('/icons/home-fill.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Home</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Home</span>
+            </div>
+            <div class="left-icons relative min-w-max no-underline hover:bg-gray-200 hover:rounded-lg pr-1 py-3 text-center rounded-lg mt-4">
+
+                <div style="background-image:url('icons/play.png')" class="m-auto pt-3 bg-[url('/icons/play.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Playlists</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Playlists</span>
+            </div>
+            <div class="left-icons relative min-w-max no-underline hover:bg-gray-200 hover:rounded-lg pr-1 py-3 text-center rounded-lg mt-4">
+
+                <div style="background-image:url('icons/sub.png')" class="m-auto pt-3 bg-[url('/icons/sub.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Subscriptions</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Subscriptions</span>
+            </div>
+            <div class="left-icons relative min-w-max no-underline hover:bg-gray-200 hover:rounded-lg pr-1 py-3 text-center  rounded-lg mt-4">
+
+                <div style="background-image:url('icons/lib.png')" class="m-auto pt-3 bg-[url('/icons/lib.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Library</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Library</span>
+            </div>
+
+
+
+        </div>
+
+        <div class="left-icons-parent h-full swipeIn max-xl:overflow-hidden max-lg:overflow-hidden max-md:overflow-hidden max-xl:h-full max-lg:h-full max-md:h-full ml-[1.5%] w-[22%] max-xl:w-full max-lg:w-full bg-white max-xl:absolute max-lg:absolute max-lg:left-0 max-md:left-0 max-xl:left-0 max-md:top-0 max-xl:top-0 max-lg:top-0  max-xl:z-20 max-lg:z-20 max-md:z-20">
+
+            <div class="before-std h-full w-full  bg-white max-xl:w-[21%] max-lg:w-[30%] max-md:w-[35%]">
+                <div class="flex w-[90%] h-[60px] first-in-left-icons hidden max-xl:flex max-md:flex max-lg:flex items-center">
+                    <button class="menu-in-left-icons px-2 py-2 h-12 hover:bg-slate-200 cursor-pointer hover:rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[100%] max-md:w-[95%] m-auto h-8" fill="#000000">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                        </svg>
+                    </button>
+                    <div class="w-[50%] h-9 logo-in-left-icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[120%] max-lg:w-[113%] max-md:w-[142%] h-9" xml:space="preserve" y="0" x="0" id="Layer_1" version="1.1" viewBox="-57.15 -21.25 495.3 127.5">
+                        <style id="style7427" type="text/css">
+</style>
+                        <g id="g7433">
+                        <path id="path7429" d="M118.9 13.3c-1.4-5.2-5.5-9.3-10.7-10.7C98.7 0 60.7 0 60.7 0s-38 0-47.5 2.5C8.1 3.9 3.9 8.1 2.5 13.3 0 22.8 0 42.5 0 42.5s0 19.8 2.5 29.2C3.9 76.9 8 81 13.2 82.4 22.8 85 60.7 85 60.7 85s38 0 47.5-2.5c5.2-1.4 9.3-5.5 10.7-10.7 2.5-9.5 2.5-29.2 2.5-29.2s.1-19.8-2.5-29.3z" fill="red" /><path id="polygon7431" fill="#fff" d="M48.6 24.3v36.4l31.6-18.2z" /></g><g id="g7451"><g id="g7449"><path id="path7435" d="M176.3 77.4c-2.4-1.6-4.1-4.1-5.1-7.6-1-3.4-1.5-8-1.5-13.6v-7.7c0-5.7.6-10.3 1.7-13.8 1.2-3.5 3-6 5.4-7.6 2.5-1.6 5.7-2.4 9.7-2.4 3.9 0 7.1.8 9.5 2.4 2.4 1.6 4.1 4.2 5.2 7.6 1.1 3.4 1.7 8 1.7 13.8v7.7c0 5.7-.5 10.2-1.6 13.7-1.1 3.4-2.8 6-5.2 7.6-2.4 1.6-5.7 2.4-9.8 2.4-4.2-.1-7.6-.9-10-2.5zm13.5-8.4c.7-1.7 1-4.6 1-8.5V43.9c0-3.8-.3-6.6-1-8.4-.7-1.8-1.8-2.6-3.5-2.6-1.6 0-2.8.9-3.4 2.6-.7 1.8-1 4.6-1 8.4v16.6c0 3.9.3 6.8 1 8.5.6 1.7 1.8 2.6 3.5 2.6 1.6 0 2.7-.8 3.4-2.6z" class="st2" /><path id="path7437" d="M360.9 56.3V59c0 3.4.1 6 .3 7.7.2 1.7.6 3 1.3 3.7.6.8 1.6 1.2 3 1.2 1.8 0 3-.7 3.7-2.1.7-1.4 1-3.7 1.1-7l10.3.6c.1.5.1 1.1.1 1.9 0 4.9-1.3 8.6-4 11-2.7 2.4-6.5 3.6-11.4 3.6-5.9 0-10-1.9-12.4-5.6-2.4-3.7-3.6-9.4-3.6-17.2v-9.3c0-8 1.2-13.8 3.7-17.5 2.5-3.7 6.7-5.5 12.6-5.5 4.1 0 7.3.8 9.5 2.3 2.2 1.5 3.7 3.9 4.6 7 .9 3.2 1.3 7.6 1.3 13.2v9.1h-20.1zm1.5-22.4c-.6.8-1 2-1.2 3.7-.2 1.7-.3 4.3-.3 7.8v3.8h8.8v-3.8c0-3.4-.1-6-.3-7.8-.2-1.8-.7-3-1.3-3.7-.6-.7-1.6-1.1-2.8-1.1-1.4-.1-2.3.3-2.9 1.1z" class="st2" /><path id="path7439" d="M147.1 55.3L133.5 6h11.9l4.8 22.3c1.2 5.5 2.1 10.2 2.7 14.1h.3c.4-2.8 1.3-7.4 2.7-14l5-22.4h11.9L159 55.3v23.6h-11.8V55.3z" class="st2" /><path id="path7441" d="M241.6 25.7V79h-9.4l-1-6.5h-.3c-2.5 4.9-6.4 7.4-11.5 7.4-3.5 0-6.1-1.2-7.8-3.5-1.7-2.3-2.5-5.9-2.5-10.9V25.7h12v39.1c0 2.4.3 4.1.8 5.1s1.4 1.5 2.6 1.5c1 0 2-.3 3-1 1-.6 1.7-1.4 2.1-2.4V25.7z" class="st2" /><path id="path7443" d="M303.1 25.7V79h-9.4l-1-6.5h-.3c-2.5 4.9-6.4 7.4-11.5 7.4-3.5 0-6.1-1.2-7.8-3.5-1.7-2.3-2.5-5.9-2.5-10.9V25.7h12v39.1c0 2.4.3 4.1.8 5.1s1.4 1.5 2.6 1.5c1 0 2-.3 3-1 1-.6 1.7-1.4 2.1-2.4V25.7z" class="st2" /><path id="path7445" d="M274.2 15.7h-11.9v63.2h-11.7V15.7h-11.9V6h35.5z" class="st2" /><path id="path7447" d="M342.8 34.2c-.7-3.4-1.9-5.8-3.5-7.3s-3.9-2.3-6.7-2.3c-2.2 0-4.3.6-6.2 1.9-1.9 1.2-3.4 2.9-4.4 4.9h-.1V3.3h-11.6v75.6h9.9l1.2-5h.3c.9 1.8 2.3 3.2 4.2 4.3 1.9 1 3.9 1.6 6.2 1.6 4.1 0 7-1.9 8.9-5.6 1.9-3.7 2.9-9.6 2.9-17.5v-8.4c-.1-6.1-.4-10.8-1.1-14.1zm-11 21.7c0 3.9-.2 6.9-.5 9.1-.3 2.2-.9 3.8-1.6 4.7-.8.9-1.8 1.4-3 1.4-1 0-1.9-.2-2.7-.7-.8-.5-1.5-1.2-2-2.1V38.1c.4-1.4 1.1-2.6 2.1-3.6 1-.9 2.1-1.4 3.2-1.4 1.2 0 2.2.5 2.8 1.4.7 1 1.1 2.6 1.4 4.8.3 2.3.4 5.5.4 9.6v7z" class="st2" /></g></g></svg>
+                    </div>
+
+
+                </div>
+                <div class="std w-full h-full pb-24 overflow-auto ">
+                    <div class="sticky z-30 top-0"></div>
+
+                    <a href="" class="left-icons relative w-[87%] no-underline hover:bg-gray-200 hover:rounded-lg pl-2 flex items-center h-12 bg-gray-200 rounded-lg mt-1">
+
+                        <span class="mr-5 bg-[url('/icons/home-fill.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Home</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Home</span>
+                    </a>
+                    <a href="#" class="left-icons no-underline relative w-[90%] hover:bg-gray-200 hover:rounded-lg pl-2 cursor-pointer flex items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/play.png')] w-8 h-8  bg-cover"></span>
+
+                        <span>Playlists</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Playlists</span>
+
+                    </a>
+                    <a href="#" class="left-icons no-underline relative w-[90%] hover:bg-gray-200 hover:rounded-lg pl-2 cursor-pointer flex items-center h-12 mb-2">
+
+                        <span class="mr-5 bg-[url('/icons/sub.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Subscriptions</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Subscriptions</span>
+
+                    </a>
+                    <hr class="w-[90%]" />
+                    <a href="#" class="left-icons relative no-underline w-[90%] pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12 mt-2">
+
+                        <span class="mr-5 bg-[url('/icons/lib.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Library</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Library</span>
+
+                    </a>
+                    <a href="#" class="left-icons no-underline relative pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/hist.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>History</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">History</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg  cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/vid.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Your videos</span>
+
+                        <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Your videos</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/watch.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Watch later</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Watch later</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/like.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Liked videos</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Liked videos</span>
+
+                    </a>
+                    <div class="left-icons relative pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/show-m.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Show more</span>
+
+                        <!--
+                        <span class="toshow absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Show more</span>
+
+                        -->
+
+                    </div>
+                    <hr class="w-[90%]" />
+                    <p class="text-lg mt-2 mb-2">Subscriptions</p>
+                    <div class="your-subscription w-full h-[297px] overflow-hidden">
+                        <!--
+                             <div class="left-icons relative w-[90%] pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                            <span class="channel-thumb mr-5 bg-[url('/icons/favicon.ico')] border-2 border-white rounded-full  w-6 h-6 bg-cover"></span>
+
+                            <span>Show more</span>
+
+                            <span class="toshow absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Show more</span>
+                        </div>
+                        -->
+
+                    </div>
+                    <div class="left-icons toggle-channels relative w-[90%] pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12 mb-2">
+
+                        <span class="mr-5 bg-[url('/icons/show-m.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Show more</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-20 border-2 border-gray-900 text-[13px]">Show more</span>
+
+                    </div>
+
+                    <hr class="w-[90%] mb-2" />
+
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/set.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Settings</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Settings</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/flag.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Report history</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Report history</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/help.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Help</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Help</span>
+
+                    </a>
+                    <a href="#" class="left-icons relative no-underline pl-2 w-[90%] flex hover:bg-gray-200 hover:rounded-lg cursor-pointer items-center h-12">
+
+                        <span class="mr-5 bg-[url('/icons/feed.png')] w-8 h-8 bg-cover"></span>
+
+                        <span>Send feedback</span>
+
+                        <span class="toshow absolute hidden bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Send feedback</span>
+
+                    </a>
+
+                    <hr class="w-[90%] mt-2 mb-2" />
+                    <div class="w-[87%] mb-4">
+                        <a href="#" class="font-semibold no-underline p-2 text-gray-600 text-sm">About</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Press</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Copyright</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Contact us</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Create Advertise</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Terms</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Privacy</a>
+                        <a href="#" class="no-underline  p-1 text-gray-600 font-semibold text-sm">Policy & Safety</a>
+
+                    </div>
+
+                    <p class="text-[13px] text-gray-400 ml-3 tracking-wide mb-2 font-thin">&#169; 2022 Google LLC</p>
+
+                    <p class="text-[12px] text-gray-400 ml-3 tracking-wide font-thin">By: Idris Mohammed</p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div style="margin:0 auto;" class="horiz-btn-parent relative w-[83%] max-[450px]:w-[100%] max-xl:w-[87%] max-md:w-[90%] max-lg:w-[87%]">
+
+            <div class="horizontal-btns max-[450px]:p-[6px]">
+                <div class="w-full h-[5rem] max-[450px]:h-[3rem]">
+                    <div class=" absolute  max-[450px]:hidden left-[0%] max-xl:-left-[1%] max-md:-left-[1%] max-lg:-left-[1%] z-50 top-0 bg-white w-20 shadow-[25px_0_0_0_rgba(255,255,255,0.5)]">
+                        <button class="show-left ml-3 hover:bg-slate-200 py-1 px-1 cursor-pointer hover:rounded-full focus:rounded-full focus:bg-slate-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="m23.333 28.5-8.5-8.5 8.5-8.542.709.75L16.292 20l7.75 7.792Z" /></svg>
+                        </button>
+
+                    </div>
+                    <div class="flex flex-row w-full h-10 max-md:pl-[2em] pl-[2em] pr-[4em] max-[450px]:pr-[0px] max-[450px]:pl-[0px]">
+
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4 " onclick="select(this)">
+                            All
+
+                            <span class="r-btn-toshow  hidden absolute bottom-[-38px] left-[50%] text-[15px] bg-white p-1 z-40 border-2 border-gray-900 text-[13px]">All</span>
+
+                        </button>
+
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 rounded-lg text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Live
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] text-[15px] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Live</span>
+                        </button>
+                        <button class="right-btns  relative min-w-max bg-gray-200 mr-3 rounded-lg text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Music
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] text-[15px] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Music</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Fifa World Cup
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">FIFA World Cup</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            News
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">News</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Cricket Show
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Cricket Show</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Makkah Live
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Makkah Live</span>
+                        </button>
+                        <button class="right-btns relative  hidden min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-lg text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Medinah Live
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Medinah Live</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Reality TV
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Reality TV</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Sport League
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Sport League</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Python
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Python</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Javascript
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Javascript</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Machine Learning
+                            <span class="r-btn-toshow hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Machine Learning</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Tailwind Css
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] text-[15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Tailwind Css</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Bootstrap
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px]  left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Boostrap</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Chat GPT
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Chat GPT</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Minshary Rashid
+                            <span class="r-btn-toshow min-w-max  hidden absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Javascript
+                            <span class="r-btn-toshow hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Javascript</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Machine Learning
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Machine Learning</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Tailwind Css
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Tailwind Css</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Bootstrap
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Boostrap</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Chat GPT
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px]  left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Chat GPT</span>
+                        </button>
+                        <button class="right-btns relative min-w-max bg-gray-200 mr-3 text-[15px]  max-[450px]:text-[13px]  max-[450px]:px-3 text-[15px] rounded-[12px] px-4" onclick="select(this)">
+                            Minshary Rashid
+                            <span class="r-btn-toshow  hidden min-w-max absolute bottom-[-38px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+                        </button>
+
+
+                    </div>
+                    <div class="absolute  max-[450px]:hidden left-[93%] max-xl:left-[93%] max-md:left-[90%] max-lg:left-[90%] max-[600px]:left-[88%] top-0 bg-white w-36 shadow-[0_0_0_25px_rgba(255,255,255,0.5)]">
+                        <button class="show-right ml-2 hover:bg-slate-200 py-1 px-1 cursor-pointer hover:rounded-full rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="m15.667 28.5-.709-.708L22.708 20l-7.75-7.792.709-.75 8.5 8.542Z" /></svg>
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div style="margin:0 auto;" class="videos-box w-[100%]  max-md:w-[100%] h-[100%] max-[450px]:pb-[30px] pb-[30px] max-lg:w-[100%] max-xl:w-[100%] max-[450px]:overflow-y-scroll overflow-auto overflow-x-hidden">
+
+                <div style="margin: 0 auto;" class="videos-box-child w-[95%] max-md:w-[95%] max-lg:w-[95%] max-xl:w-[95%] max-[450px]:w-[100%]">
+                    <div class="videos grid w-full place-content-center justify-items-center max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 max-[1000px]:grid-x-1 max-xl:gap-x-3 gap-x-4 gap-y-8 grid-cols-4 grid-rows-3 max-xl:grid-cols-3 max-lg:grid-cols-3">
+                        <!--
+        <div class="video-container cursor-pointer max-[450px]:w-[100%]">
+        <div class="image-box relative">
+            <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] w-[335px] rounded-[20px] object-cover object-center" src="icons/picture.jpeg" />
+            <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[12px] z-10 bottom-[12px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
+
+            <div class="display-hover bg-white shadow-xl z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
+                <div class="img-box relative w-full">
+                    <img class="h-[200px] w-full rounded-t-[20px] object-cover object-center" src="icons/picture.jpeg" />
+
+                    <div class="w-full absolute max-lg:left-0 bottom-[2px]">
+                        <div style="background:rgba(0,0,0,0.6);" class="track h-[3px] relative w-full">
+
+                            <div style="background:red" class="top-0 w-[0px] h-[3px] absolute left-0 z-50 watch">
+
+                            </div>
+                            <div style="background:grey" class="load h-[3px] absolute w-[0px] top-0 left-0">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="th-title flex space-between ml-4 mt-6 h-30 mb-3">
+                    <div style="background-image:url('icons/picture.jpeg')" class="thumb-image rounded-full cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] border-2 border-white rounded-full bg-cover">
+                        <span class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+                    </div>
+
+                    <div class="title-view relative">
+                        <div class="relative title">
+                            <div style="text-overflow:ellipsis;overflow:hidden;" class=" w-[220px] cursor-pointer text-gray-700 h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                                No weapon fashioned No weapon fashioned against me shall prosper
+
+                            </div>
+                            <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+
+                        </div>
+
+                        <div class="channel-name relative text-[15px] text-slate-500">
+                            Brain Jotter Comedian
+                            <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Notifications</span>
+
+                        </div>
+                        <div class="view text-[15px] text-slate-500">234k views &#x2022; 3 years ago</div>
+                    </div>
+
+                </div>
+                <button style="margin:0 auto 3px auto" class="w-[90%] bg-gray-200 rounded-[20px] hover:bg-gray-300 justify-center cursor-pointer flex items-center h-12 mb-4">
+
+                    <span class="mr-2 bg-[url('/icons/watch.png')] w-8 h-8  bg-cover"></span>
+
+                    <span>Watch later</span>
+
+
+                </button>
+                <button style="margin:0 auto" class="w-[90%] rounded-[20px] bg-gray-200 hover:bg-gray-300 justify-center cursor-pointer flex items-center h-12 ">
+
+                    <span class="mr-2 bg-[url('/icons/play.png')] w-8 h-8 bg-cover"></span>
+
+                    <span>Add to playlist</span>
+
+
+                </button>
+
+
+            </div>
+        </div>
+
+        <div class="th-title flex space-between ml-2 mt-6 h-30 ">
+            <div style="background-image:url('icons/picture.jpeg')" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
+                <span class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+            </div>
+
+            <div class="title-view relative max-[450px]:w-[90%]">
+                <div class="relative title max-[450px]:w-[100%]">
+                    <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] w-[210px] cursor-pointer h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                        No weapon fashioned No weapon fashioned against me shall prosper
+
+                    </div>
+                    <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+
+                </div>
+
+                <div class="max-[450px]:flex">
+                    <div class="channel-name relative text-[15px] max-[450px]:text-[13px] max-[450px]:flex justify-between text-slate-500 mr-2">
+                        Brain Jotter Comedian   <span class="ml-2 hidden max-[450px]:block"> &#x2022;</span>
+                        <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Notifications</span>
+
+                    </div>
+
+                    <div class="view text-[15px] max-[450px]:text-[13px] text-slate-500">234k views &#x2022; 3 years ago</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    -->
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <!--
+
+            <div class="video-container cursor-pointer max-[450px]:w-[100%]">
+                           <div class="image-box relative">
+                               <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] w-[335px] rounded-[20px] object-cover object-center" src="icons/picture.jpeg" />
+                               <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[12px] z-10 bottom-[12px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
+
+                               <div class="display-hover bg-white shadow-xl z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
+                                   <div class="img-box relative w-full">
+                                       <img class="h-[200px] w-full rounded-t-[20px] object-cover object-center" src="icons/picture.jpeg" />
+
+                                       <div class="w-full absolute max-lg:left-0 bottom-[2px]">
+                                           <div style="background:rgba(0,0,0,0.6);" class="track h-[3px] relative w-full">
+
+                                               <div style="background:red" class="top-0 w-[0px] h-[3px] absolute left-0 z-50 watch">
+
+                                               </div>
+                                               <div style="background:grey" class="load h-[3px] absolute w-[0px] top-0 left-0">
+
+                                               </div>
+
+                                           </div>
+                                       </div>
+
+                                   </div>
+                                   <div class="th-title flex space-between ml-4 mt-6 h-30 mb-3">
+                                       <div style="background-image:url('icons/picture.jpeg')" class="thumb-image rounded-full cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] border-2 border-white rounded-full bg-cover">
+                                           <span class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+                                       </div>
+
+                                       <div class="title-view relative">
+                                           <div class="relative title">
+                                               <div class=" w-[220px] cursor-pointer truncate text-gray-700 h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                                                   No weapon fashioned No weapon fashioned against me shall prosper
+
+                                               </div>
+                                               <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+
+                                           </div>
+
+                                           <div class="channel-name relative text-[15px] text-slate-500">
+                                               Brain Jotter Comedian
+                                               <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Notifications</span>
+
+                                           </div>
+                                           <div class="view text-[15px] text-slate-500">234k views &#x2022; 3 years ago</div>
+                                       </div>
+
+                                   </div>
+                                   <button style="margin:0 auto 3px auto" class="w-[90%] bg-gray-200 rounded-[20px] hover:bg-gray-300 justify-center cursor-pointer flex items-center h-12 mb-4">
+
+                                       <span class="mr-2 bg-[url('/icons/watch.png')] w-8 h-8  bg-cover"></span>
+
+                                       <span>Watch later</span>
+
+
+                                   </button>
+                                   <button style="margin:0 auto" class="w-[90%] rounded-[20px] bg-gray-200 hover:bg-gray-300 justify-center cursor-pointer flex items-center h-12 ">
+
+                                       <span class="mr-2 bg-[url('/icons/play.png')] w-8 h-8 bg-cover"></span>
+
+                                       <span>Add to playlist</span>
+
+
+                                   </button>
+
+
+                               </div>
+                           </div>
+
+                           <div class="th-title flex space-between ml-2 mt-6 h-30 ">
+                               <div style="background-image:url('icons/picture.jpeg')" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
+                                   <span class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+                               </div>
+
+                               <div class="title-view relative max-[450px]:w-[90%]">
+                                   <div class="relative title max-[450px]:w-[100%]">
+                                       <div class="max-[450px]:w-[95%] w-[210px] cursor-pointer truncate h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                                           No weapon fashioned No weapon fashioned against me shall prosper
+
+                                       </div>
+                                       <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-2 border-gray-900 text-[13px]">Minshary Rashid</span>
+
+
+                                   </div>
+
+                                   <div class="max-[450px]:flex">
+                                       <div class="channel-name relative text-[15px] max-[450px]:text-[13px] max-[450px]:flex justify-between text-slate-500 mr-2">
+                                           Brain Jotter Comedian   <span class="ml-2 hidden max-[450px]:block"> &#x2022;</span>
+                                           <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">Notifications</span>
+
+                                       </div>
+
+                                       <div class="view text-[15px] max-[450px]:text-[13px] text-slate-500">234k views &#x2022; 3 years ago</div>
+                                   </div>
+
+                               </div>
+
+                           </div>
+                       </div>
+
+
+
+           -->
+
+
+    <footer class="footer hidden max-[450px]:block w-100% max-[450px]:absolute max-[450px]:bottom-[0px]">
+        <div class="wrapper w-[100%] flex justify-around items-center h-16">
+            <div class="parent relative min-w-max pr-1 py-2 text-center z-4 rounded-lg">
+
+                <div style="background-image:url('icons/home-fill.png')" class="home m-auto pt-3 bg-[url('/icons/home-fill.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Home</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Home</span>
+            </div>
+            <div class="parent relative min-w-max pr-1 py-2 text-center rounded-lg">
+
+                <div style="background-image:url('icons/play.png')" class="play m-auto pt-3 bg-[url('/icons/play.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Playlists</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Playlists</span>
+            </div>
+            <div class="parent relative min-w-max pr-1 py-2 text-center rounded-lg">
+
+                <div style="background-image:url('icons/sub.png')" class="sub m-auto pt-3 bg-[url('/icons/sub.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Subscriptions</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Subscriptions</span>
+            </div>
+            <div  class="parent relative min-w-max pr-1 py-2 text-center  rounded-lg">
+
+                <div style="background-image:url('icons/lib.png')" class="lib m-auto pt-3 bg-[url('/icons/lib.png')] w-8 h-8 bg-cover"></div>
+
+                <div class="text-[11px] mb-1 mt-1">Library</div>
+
+                <span class="toshow hidden absolute bottom-[-15px] left-[50%] bg-white p-1 z-10 border-2 border-gray-900 text-[13px]">Library</span>
+            </div>
+
+
+
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
