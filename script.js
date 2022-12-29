@@ -605,7 +605,7 @@ menu.addEventListener('click', () => {
         console.log("inside else");
         leftIcons.style.display = "block";
         smallLeft.style.display = "none";
-        horiz_parent.style.width = "93%";
+        //horiz_parent.style.width = "93%";
 
 
 
@@ -621,7 +621,7 @@ menuInLeftIcons.addEventListener('click', () => {
 
         leftIcons.style.display = "none";
         smallLeft.style.display = "block";
-        horiz_parent.style.width = "93%";
+        horiz_parent.style.width = "87%";
     }
 
 })
