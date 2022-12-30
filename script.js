@@ -447,7 +447,7 @@ window.addEventListener('resize', () => {
 
     if ((window.innerWidth > 1289 && smallLeft.style.display === "block")) {
 
-        horiz_parent.style.width = "93%";
+        horiz_parent.style.width = "89%";
         leftIcons.style.display = "none";
 
         if (leftIcons.style.display === "block") {
@@ -467,7 +467,7 @@ window.addEventListener('resize', () => {
     }
     if (window.innerWidth > 1289 && smallLeft.style.display === "none") {
 
-        horiz_parent.style.width = "93%";
+        horiz_parent.style.width = "89%";
         smallLeft.style.display = "block";
 
     }
