@@ -106,19 +106,33 @@ class Videos {
         let sec = Math.floor((milliReleased % (1000 * 60)) / 1000);
 
         if (years >= 1) {
-            dateReleased = years + " years ago";
+            
+            years == 1? dateReleased = years + " year ago": dateReleased = years + " years ago";
+            
         } else if (months >= 1) {
-            dateReleased = months + " months ago";
+            
+            months == 1? dateReleased = months + " month ago": dateReleased = months + " months ago";
+            
         } else if (weeks >= 1) {
-            dateReleased = weeks + " weeks ago";
+            
+            weeks == 1?  dateReleased = weeks + " week ago":  dateReleased = weeks + " weeks ago";
+           
         } else if (days >= 1) {
-            dateReleased = days + " days ago";
+            
+            days == 1? dateReleased = days + " day ago": dateReleased = days + " days ago";
+            
         } else if (hours >= 1) {
-            dateReleased = hours + " hours ago";
+            
+            hours == 1?  dateReleased = hours + " hour ago":  dateReleased = hours + " hours ago";
+           
         } else if (min >= 1) {
-            dateReleased = min + " minutes ago";
+            
+            min == 1? dateReleased = min + " minute ago": dateReleased = min + " minutes ago";
+            
         } else {
-            dateReleased = sec + " seconds ago";
+            
+            sec == 1?  dateReleased = sec + " second ago":  dateReleased = sec + " seconds ago";
+           
         }
 
         return dateReleased;
@@ -176,7 +190,7 @@ class Videos {
         //console.log(this.calcViews(vid_data.statistics.viewCount));
         document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer max-[450px]:w-[100%]">
                             <div class="image-box relative">
-                                <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] w-full rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
+                                <img class="h-[170px] max-[450px]:w-[100%] max-[450px]:rounded-none max-[450px]:h-[200px]  max-[1000px]:w-[385px] max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[180px]  max-xl:h-[210px] max-xl:[287px] max-2xl:w-[335px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
 
                                 <div class="display-hover bg-white shadow-xl rounded-t-[20px] z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
