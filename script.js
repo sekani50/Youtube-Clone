@@ -219,7 +219,7 @@ class Videos {
 
                                         <div class="title-view relative">
                                             <div class="relative title">
-                                                <div style="text-overflow:ellipsis;overflow:hidden;" class=" w-[220px] cursor-pointer text-gray-700 h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                                                <div style="text-overflow:ellipsis;overflow:hidden;" class=" w-[250px] cursor-pointer text-gray-700 h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
                                                     ${vid_data.snippet.localized.title}
 
                                                 </div>
@@ -266,11 +266,11 @@ class Videos {
 
                                 <div class="title-view relative max-[450px]:w-[90%]">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] w-[210px] cursor-pointer h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
+                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] w-[200px] cursor-pointer h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[15px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
-                                        <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                        <span class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-1 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
 
 
                                     </div>
@@ -282,7 +282,7 @@ class Videos {
 
                                         </div>
 
-                                        <div class="view text-[15px] max-[450px]:text-[13px] text-slate-500">${this.calcViews(vid_data.statistics.viewCount)} &#x2022; ${this.calcDate(vid_data.snippet.publishedAt)}</div>
+                                        <div class="view text-[13px] max-[450px]:text-[13px] text-slate-500">${this.calcViews(vid_data.statistics.viewCount)} &#x2022; ${this.calcDate(vid_data.snippet.publishedAt)}</div>
                                     </div>
 
                                 </div>
