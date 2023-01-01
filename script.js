@@ -774,7 +774,7 @@ async function displayHoverEffect() {
         })
 
 
-        elem.children[2].addEventListener('mouseout', () => {
+        elem.children[2].addEventListener('mouseleave', () => {
 
 
             elem.children[2].classList.add("hidden");
