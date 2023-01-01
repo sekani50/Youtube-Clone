@@ -730,12 +730,11 @@ async function displayHoverEffect() {
 
     Array.prototype.forEach.call(imgBoxes, (elem, index) => {
 
-        elem.addEventListener('mouseover', () => {
+        elem.addEventListener('mouseenter', () => {
 
             //displayHoverEffect();
 
-            //console.log(event.clientX);
-
+            //using to mouse position to avoid overflow hidden
             if (event.clientX >= window.innerWidth / 2) {
 
                 elem.children[2].style.left = "-50%";
@@ -743,7 +742,8 @@ async function displayHoverEffect() {
 
 
             //hmmm
-            elem.children[2].style.opacity !== 1 ? elem.children[2].style.opacity = 0 : false;
+             //check if opacity is zero, if it is not, then user is still in dispHover
+            elem.children[2].style.opacity != 0 ? elem.children[2].style.opacity = 1 : elem.children[2].style.opacity = 0;
 
             setTimeout(() => {
                 elem.children[2].style.opacity = 1;
@@ -774,10 +774,13 @@ async function displayHoverEffect() {
         })
 
 
-        elem.addEventListener('mouseout', () => {
+        elem.children[2].addEventListener('mouseout', () => {
 
 
             elem.children[2].classList.add("hidden");
+            
+            //set opacity back to zero
+            elem.children[2].style.opacity = 0;
 
         })
     })
