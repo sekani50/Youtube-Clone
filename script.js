@@ -194,7 +194,7 @@
                 //console.log(this.calcDate(vid_data.snippet.publishedAt));
                 //console.log(this.calcViews(vid_data.statistics.viewCount));
                 //console.log(window.innerWidth);
-                document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[230px] max-[710px]:w-[270px] max-[600px]:w-[380px] max-[650px]:w-[260px] max-[1230px]:w-[300px] max-[1075px]:w-[280px] max-[1000px]:w-[365px] max-[830px]:w-[320px] max-[800px]:w-[300px] max-[907px]:w-[330px] max-[930px]:w-[340px] max-xl:w-[300px] max-lg:w-[270px] max-[450px]:w-[100%]">
+                document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[220px] max-[710px]:w-[270px] max-[600px]:w-[380px] max-[650px]:w-[260px] max-[1230px]:w-[300px] max-[1075px]:w-[280px] max-[1000px]:w-[365px] max-[830px]:w-[320px] max-[800px]:w-[300px] max-[907px]:w-[330px] max-[930px]:w-[340px] max-xl:w-[300px] max-lg:w-[270px] max-[450px]:w-[100%]">
                             <div class="image-box relative w-full ">
                                 <img class="main-image h-[170px]  max-[1230px]:h-[170px] max-[450px]:h-[200px] max-[450px]:rounded-[0px] w-full max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[170px] max-[600px]:h-[230px] max-xl:h-[210px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
