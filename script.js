@@ -229,7 +229,7 @@
                                                     ${vid_data.snippet.localized.title}
 
                                                 </div>
-                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
 
 
                                             </div>
