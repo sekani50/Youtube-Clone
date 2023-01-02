@@ -1,4 +1,4 @@
-// JavaScript source code
+ // JavaScript source code
         let vid;
 
         let api_key = 'AIzaSyDJofYPzjJJe9V434sstT2Q2R5m5K2WzUU';
@@ -194,9 +194,9 @@
                 //console.log(this.calcDate(vid_data.snippet.publishedAt));
                 //console.log(this.calcViews(vid_data.statistics.viewCount));
                 //console.log(window.innerWidth);
-                document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[220px] max-[710px]:w-[270px] max-[600px]:w-[380px] max-[650px]:w-[260px] max-[1230px]:w-[300px] max-[1075px]:w-[280px] max-[1000px]:w-[365px] max-[830px]:w-[320px] max-[800px]:w-[300px] max-[907px]:w-[330px] max-[930px]:w-[340px] max-xl:w-[300px] max-lg:w-[270px] max-[450px]:w-[100%]">
+                document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[280px] max-[710px]:w-[270px] max-[600px]:w-[380px] max-[650px]:w-[260px] max-[1230px]:w-[300px] max-[1075px]:w-[280px] max-[1000px]:w-[365px] max-[830px]:w-[320px] max-[800px]:w-[300px] max-[907px]:w-[330px] max-[930px]:w-[340px] max-xl:w-[330px] max-lg:w-[270px] max-[450px]:w-[100%]">
                             <div class="image-box relative w-full ">
-                                <img class="main-image h-[135px]  max-[1230px]:h-[170px] max-[450px]:h-[200px] max-[450px]:rounded-[0px] w-full max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[170px] max-[600px]:h-[230px] max-xl:h-[210px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
+                                <img class="main-image h-[170px]  max-[1230px]:h-[170px] max-[450px]:h-[200px] max-[450px]:rounded-[0px] w-full max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[170px] max-[600px]:h-[230px] max-xl:h-[210px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
 
                                 <div class="display-hover bg-white shadow-xl rounded-t-[20px] z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
@@ -229,7 +229,7 @@
                                                     ${vid_data.snippet.localized.title}
 
                                                 </div>
-                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
 
 
                                             </div>
@@ -264,15 +264,15 @@
                                 </div>
                             </div>
 
-                            <div class="th-title flex space-between ml-2 mt-6 h-30 w-[100%] ">
-                                <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-fill max-md:h-[2.5rem] max-md:h-[2.5rem] w-[30%] rounded-full border-2 border-white rounded-full bg-cover">
+                            <div class="th-title flex space-between ml-2 mt-6 h-30 ">
+                                <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
                                     <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
 
                                 </div>
 
                                 <div class="title-view relative max-[450px]:w-[90%]">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[70%] cursor-pointer h-[45px] pr-4 mb-2 text-[14px]">
+                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[210px] cursor-pointer h-[50px] pr-4 mb-2 text-[15px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
@@ -629,10 +629,7 @@
         let sl = document.querySelector(".show-left");
         sl.addEventListener('click', () => {
 
-            // console.log(horizBtn.scrollLeft);
-
-
-            // console.log(horizBtn.scrollWidth);
+           
 
             sl.style.background = "#C0C0C0";
 
@@ -678,8 +675,8 @@
                     horiz_parent.style.width = "90%";
                     leftIcons.style.display = "none";
                     smallLeft.style.display = "block";
-                    videosGrid.classList.remove("gap-x-\[8em\]");
-                    videosGrid.setAttribute('style', "grid-column-gap:8em");
+                    //videosGrid.classList.remove("gap-x-\[8em\]");
+                    //videosGrid.setAttribute('style', "grid-column-gap:8em");
 
                     //console.log(videosGrid.children[0].children[0]);
                     
@@ -687,7 +684,7 @@
                     Array.prototype.forEach.call(vidCont, (el) => {
 
                         //console.log("inside the class");
-                        el.style.width = "270px";
+                        el.style.width = "310px";
 
 
                     })
@@ -707,14 +704,14 @@
                     leftIcons.style.display = "block";
                     smallLeft.style.display = "none";
                     horiz_parent.style.width = "80%";
-                    videosGrid.classList.add("gap-x-\[8em\]");
-                    videosGrid.removeAttribute('style', "grid-column-gap:8em");
+                    //videosGrid.classList.add("gap-x-\[8em\]");
+                    //videosGrid.removeAttribute('style', "grid-column-gap:10px");
 
 
                     Array.prototype.forEach.call(vidCont, (el) => {
 
                         //console.log("inside the class");
-                        el.removeAttribute("style", "width:270px");
+                        el.removeAttribute("style", "width:310px");
 
 
                     })
