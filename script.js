@@ -265,14 +265,14 @@
                             </div>
 
                             <div class="th-title flex space-between ml-2 mt-6 h-30 ">
-                                <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
+                                <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-fill max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
                                     <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
 
                                 </div>
 
                                 <div class="title-view relative max-[450px]:w-[90%]">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[160px] cursor-pointer h-[50px] pr-4 mb-2 text-[14px]">
+                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[100px] cursor-pointer h-[40px] pr-4 mb-2 text-[14px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
