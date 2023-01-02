@@ -272,7 +272,7 @@
 
                                 <div class="title-view relative max-[450px]:w-[90%]">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[100px] cursor-pointer h-[40px] pr-4 mb-2 text-[14px]">
+                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[100px] cursor-pointer h-[45px] pr-4 mb-2 text-[14px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
