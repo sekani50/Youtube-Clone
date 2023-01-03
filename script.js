@@ -1,7 +1,7 @@
  // JavaScript source code
         let vid;
 
-        let api_key = 'AIzaSyDJofYPzjJJe9V434sstT2Q2R5m5K2WzUU';
+        let api_key = 'AIzaSyCWhlGB129Dya9kzohmOC3h8tQ2ruWW5qA';
 
         async function fetchData() {
 
