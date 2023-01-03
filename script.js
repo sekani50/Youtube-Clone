@@ -557,7 +557,7 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.style.width = "290px";
+        el.style.width = "270px";
       });
 
       Array.prototype.forEach.call(mainImage, (el) => {
@@ -574,7 +574,7 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.removeAttribute("style", "width:290px");
+        el.removeAttribute("style", "width:270px");
         //el.setAttribute("style", "width:260px");
       });
       Array.prototype.forEach.call(vidCont, (el) => {
