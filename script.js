@@ -191,7 +191,7 @@
             ".videos"
           ).innerHTML += ` <div class="video-container cursor-pointer">
                                   <div class="image-box relative w-full">
-                                    <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-transparent max-lg:h-[180px] h-[165px] max-[600px]:h-[230px] ">
+                                    <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-transparent max-lg:h-[180px] h-[147px] max-[600px]:h-[230px] ">
                                       <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover" src="${
                                         vid_data.snippet.thumbnails.high.url
                                       }" />
@@ -562,7 +562,7 @@
       
             Array.prototype.forEach.call(mainImage, (el) => {
               //console.log("inside the class");
-              el.style.height = "180px";
+              el.style.height = "170px";
             });
           } else {
             console.log("inside else");
@@ -579,7 +579,7 @@
             });
             Array.prototype.forEach.call(vidCont, (el) => {
               //console.log("inside the class");
-              el.removeAttribute("style", "height:180px");
+              el.removeAttribute("style", "height:170px");
             });
           }
       
