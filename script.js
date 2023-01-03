@@ -194,14 +194,20 @@
                 //console.log(this.calcDate(vid_data.snippet.publishedAt));
                 //console.log(this.calcViews(vid_data.statistics.viewCount));
                 //console.log(window.innerWidth);
-                document.querySelector('.videos').innerHTML += ` <div class="video-container cursor-pointer w-[280px] max-[710px]:w-[270px] max-[600px]:w-[380px] max-[650px]:w-[260px] max-[1230px]:w-[300px] max-[1075px]:w-[280px] max-[1000px]:w-[365px] max-[830px]:w-[320px] max-[800px]:w-[300px] max-[907px]:w-[330px] max-[930px]:w-[340px] max-xl:w-[330px] max-lg:w-[270px] max-[450px]:w-[100%]">
-                            <div class="image-box relative w-full ">
-                                <img class="main-image h-[170px]  max-[1230px]:h-[170px] max-[450px]:h-[200px] max-[450px]:rounded-[0px] w-full max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[170px] max-[600px]:h-[230px] max-xl:h-[210px] rounded-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
+             document.querySelector(
+      ".videos"
+    ).innerHTML += ` <div class="video-container cursor-pointer ">
+                            <div class="image-box relative w-full rounded-t-[20px]">
+                                <img class="main-image w-full max-md:h-[170px] max-[1000px]:h-[215px] max-lg:h-[170px] h-[170px] max-[600px]:h-[230px] max-xl:h-[210px] rounded-[20px] object-cover object-center" src="${
+                                  vid_data.snippet.thumbnails.high.url
+                                }" />
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
 
                                 <div class="display-hover bg-white shadow-xl rounded-t-[20px] z-50 hidden absolute max-xl:left-[-10px] left-[-10px] top-[-1%] w-[400px] pb-4 rounded-b-[20px]">
                                     <div class="img-box relative w-full">
-                                        <img class="h-[200px] w-full rounded-t-[20px] object-cover object-center" src="${vid_data.snippet.thumbnails.high.url}" />
+                                        <img class="h-[200px] w-full rounded-t-[20px] object-cover object-center" src="${
+                                          vid_data.snippet.thumbnails.high.url
+                                        }" />
 
                                         <div class="w-full absolute max-lg:left-0 bottom-[2px]">
                                             <div style="background:rgba(0,0,0,0.6);" class="track h-[3px] relative w-full">
@@ -218,28 +224,43 @@
 
                                     </div>
                                     <div class="th-title flex space-between ml-4 mt-6 h-30 mb-3">
-                                        <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image rounded-full cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] border-2 border-white rounded-full bg-cover">
-                                            <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                        <div style="background-image:url(${
+                                          vid_data.channelThumb
+                                        })" class="thumb-image cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] border-2 border-white rounded-full bg-cover">
+                                            <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-gray-900 text-[13px]">${
+                                              vid_data.snippet.channelTitle
+                                            }</span>
 
                                         </div>
 
                                         <div class="title-view relative">
                                             <div class="relative title">
                                                 <div style="text-overflow:ellipsis;overflow:hidden;" class=" w-[220px] cursor-pointer text-gray-700 h-[50px] max-[600px]:w-[240px] max-[650px]:w-[185px] max-md:w-[210px] max-[1000px]:w-[250px] pr-4 mb-2 text-[17px]">
-                                                    ${vid_data.snippet.localized.title}
+                                                    ${
+                                                      vid_data.snippet.localized
+                                                        .title
+                                                    }
 
                                                 </div>
-                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                                <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${
+                                                  vid_data.snippet.channelTitle
+                                                }</span>
 
 
                                             </div>
 
                                             <div class="channel-name relative text-[15px] text-slate-500">
                                                 ${vid_data.snippet.channelTitle}
-                                                <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">${vid_data.snippet.channelTitle}</span>
+                                                <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">${
+                                                  vid_data.snippet.channelTitle
+                                                }</span>
 
                                             </div>
-                                            <div class="view text-[15px] text-slate-500">${this.calcViews(vid_data.statistics.viewCount)} &#x2022; ${this.calcDate(vid_data.snippet.publishedAt)}</div>
+                                            <div class="view text-[15px] text-slate-500">${this.calcViews(
+                                              vid_data.statistics.viewCount
+                                            )} &#x2022; ${this.calcDate(
+      vid_data.snippet.publishedAt
+    )}</div>
                                         </div>
 
                                     </div>
@@ -264,38 +285,54 @@
                                 </div>
                             </div>
 
-                            <div class="th-title flex space-between ml-2 mt-6 h-30 ">
-                                <div style="background-image:url(${vid_data.channelThumb})" class="thumb-image max-[450px]:hidden cursor-pointer relative mr-3 object-cover object-center max-md:h-[2.5rem] max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] rounded-full border-2 border-white rounded-full bg-cover">
-                                    <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                            <div class="th-title flex gap-3 ml-2 mt-6 h-30 ">
+                            <div class="mr-3">
+                                <div style="background-image:url(${
+                                  vid_data.channelThumb
+                                })" class=" thumb-image cursor-pointer relative object-cover object-center max-md:h-[2.5rem] h-[2.5rem] w-[2.5rem] border-2 border-white rounded-full bg-cover">
+                                    <span style="border 1px solid black" class="show-name absolute bottom-[-20px] left-[50%] bg-white p-1 z-10 min-w-max border-2 border-gray-900 text-[13px]">${
+                                      vid_data.snippet.channelTitle
+                                    }</span>
 
                                 </div>
+                                </div>
 
-                                <div class="title-view relative max-[450px]:w-[90%]">
+                                <div class="col-span-10 title-view relative ">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div style="text-overflow:ellipsis;overflow:hidden;" class="max-[450px]:w-[95%] max-[600px]:w-[270px] max-[650px]:w-[200px] w-[210px] cursor-pointer h-[50px] pr-4 mb-2 text-[15px]">
+                                        <div style="text-overflow:ellipsis;overflow:hidden;" class=" cursor-pointer h-[50px] mb-2 max-2xl:text-[11px] text-[14px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
-                                        <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-2 border-gray-900 text-[13px]">${vid_data.snippet.channelTitle}</span>
+                                        <span style="border 1px solid black" class="title-show absolute overflow-auto bottom-[-20%] left-[50%] bg-white p-1 z-30 min-w-max border-2 border-gray-900 text-[13px]">${
+                                          vid_data.snippet.channelTitle
+                                        }</span>
 
 
                                     </div>
 
                                     <div class="max-[450px]:flex">
-                                        <div class="channel-name relative text-[13px] max-[450px]:text-[13px] max-[450px]:flex justify-between text-slate-500 mr-1">
-                                            ${vid_data.snippet.channelTitle}   <span class="ml-1 hidden max-[450px]:block"> &#x2022;</span>
-                                            <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">${vid_data.snippet.channelTitle}</span>
+                                        <div class="channel-name relative text-[13px] max-[450px]:text-[13px] max-2xl:text-[11px] max-[450px]:flex justify-between text-slate-500 mr-1">
+                                            ${
+                                              vid_data.snippet.channelTitle
+                                            }   <span class="ml-1 hidden max-[450px]:block"> &#x2022;</span>
+                                            <span style="background:rgba(0,0,0,0.5)" class="channel-description min-w-max left-[-2px] z-10 top-[-50px] text-sm px-1 py-2 rounded text-slate-100 absolute">${
+                                              vid_data.snippet.channelTitle
+                                            }</span>
 
                                         </div>
 
-                                        <div class="view text-[13px] max-[450px]:text-[13px] text-slate-500">${this.calcViews(vid_data.statistics.viewCount)} &#x2022; ${this.calcDate(vid_data.snippet.publishedAt)}</div>
+                                        <div class="view text-[13px] max-[450px]:text-[13px] max-2xl:text-[12px] text-slate-500">${this.calcViews(
+                                          vid_data.statistics.viewCount
+                                        )} &#x2022; ${this.calcDate(
+      vid_data.snippet.publishedAt
+    )}</div>
                                     </div>
 
                                 </div>
 
                             </div>
-                        </div>`
-
+                        </div>`;
+              
                 this.displayHoverEffect();
                
                 this.menuFunction();
