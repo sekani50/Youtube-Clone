@@ -551,7 +551,7 @@ function menuFunction() {
       leftIcons.style.display = "none";
       smallLeft.style.display = "block";
       //videosGrid.classList.remove("gap-x-\[8em\]");
-      videosGrid.setAttribute('style', "grid-column-gap:4em");
+      //videosGrid.setAttribute('style', "grid-column-gap:4em");
 
       //console.log(videosGrid.children[0].children[0]);
 
@@ -570,7 +570,7 @@ function menuFunction() {
       smallLeft.style.display = "none";
       horiz_parent.style.width = "80%";
       //videosGrid.classList.add("gap-x-\[8em\]");
-      videosGrid.removeAttribute('style', "grid-column-gap:4em");
+      //videosGrid.removeAttribute('style', "grid-column-gap:4em");
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
