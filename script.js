@@ -184,15 +184,16 @@ class Videos {
     //console.log(vid_data.channelThumb);
     //console.log(this.calcDate(vid_data.snippet.publishedAt));
     //console.log(this.calcViews(vid_data.statistics.viewCount));
-    //console.log(window.innerWidth); class="home m-auto pt-3 bg-[url('../icons/home.png')] w-8 h-8 bg-cover" bg-[length:200px_100px]
+
+    //let images have higher resolution in mobile view
+    let vid_image;
+    document.body.clientWidth > 450 ? vid_image = vid_data.snippet.thumbnails.medium.url: vid_image = vid_data.snippet.thumbnails.high.url;
     document.querySelector(
       ".videos"
     ).innerHTML += ` <div class="video-container cursor-pointer">
                             <div class="image-box relative w-full">
                               <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-cover max-lg:h-[180px] h-[165px] max-[600px]:h-[230px] max-xl:h-[184px] ">
-                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover" src="${
-                                  vid_data.snippet.thumbnails.medium.url
-                                }" />
+                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover" src="${vid_image}" />
                                 </div>
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
 
@@ -292,7 +293,7 @@ class Videos {
 
                                 <div class="col-span-10 title-view relative ">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div class=" cursor-pointer h-[47px] leading-7 mb-2 overflow-hidden text-[14px] max-[450px]:w-[100%] pr-4 w-[200px]">
+                                        <div class=" cursor-pointer h-[47px] leading-7 mb-2 overflow-hidden  text-[14px] max-[450px]:h-auto max-[450px]:w-[100%] pr-4 w-[200px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
