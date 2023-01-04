@@ -1,7 +1,7 @@
       // JavaScript source code
 let vid;
 
-let api_key = "AIzaSyDJofYPzjJJe9V434sstT2Q2R5m5K2WzUU";
+let api_key = "AIzaSyCWhlGB129Dya9kzohmOC3h8tQ2ruWW5qA";
 
 async function fetchData() {
   const option = {
@@ -293,7 +293,7 @@ class Videos {
 
                                 <div class="col-span-10 title-view relative ">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div class=" cursor-pointer h-[47px] leading-7 mb-2 overflow-hidden  text-[14px] max-[450px]:h-auto max-[450px]:w-[100%] pr-4 w-[200px]">
+                                        <div class=" cursor-pointer sm:h-[47px] leading-7 mb-2 overflow-hidden  text-[14px] max-[450px]:w-[100%] pr-4 w-[200px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
