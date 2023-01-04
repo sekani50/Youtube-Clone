@@ -1,7 +1,7 @@
       // JavaScript source code
 let vid;
 
-let api_key = "AIzaSyD7zpd1l6bjI6Z9le9IpTHa2matvXR78Bg";
+let api_key = "AIzaSyDJofYPzjJJe9V434sstT2Q2R5m5K2WzUU";
 
 async function fetchData() {
   const option = {
@@ -186,14 +186,14 @@ class Videos {
     //console.log(vid_data.channelThumb);
     //console.log(this.calcDate(vid_data.snippet.publishedAt));
     //console.log(this.calcViews(vid_data.statistics.viewCount));
-    //console.log(window.innerWidth);
+    //console.log(window.innerWidth); class="home m-auto pt-3 bg-[url('../icons/home.png')] w-8 h-8 bg-cover" bg-[length:200px_100px]
     document.querySelector(
       ".videos"
     ).innerHTML += ` <div class="video-container cursor-pointer">
                             <div class="image-box relative w-full">
-                              <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-transparent max-lg:h-[180px] h-[165px] max-[600px]:h-[230px] max-xl:h-[184px] ">
-                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover" src="${
-                                  vid_data.snippet.thumbnails.high.url
+                              <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-cover max-lg:h-[180px] h-[165px] max-[600px]:h-[230px] max-xl:h-[184px] ">
+                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover object-center" src="${
+                                  vid_data.snippet.thumbnails.medium.url
                                 }" />
                                 </div>
                                 <span style="background:rgba(0,0,0,1)" class="hover-to-play right-[9px] z-10 bottom-[9px] min-w-max text-sm px-1 py-1 rounded text-white absolute">keep hovering to play</span>
@@ -461,7 +461,7 @@ function windowResize() {
     if (window.innerWidth > 1230 && smallLeft.style.display === "block") {
       horiz_parent.style.width = "90%";
       leftIcons.style.display = "none";
-      videosGrid.removeAttribute("style", "grid-column-gap:2em");
+      //videosGrid.removeAttribute("style", "grid-column-gap:2em");
 
       if (leftIcons.style.display === "block") {
         leftIcons.style.display = "block";
@@ -469,7 +469,7 @@ function windowResize() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.removeAttribute("style", "width:290px");
+        //el.removeAttribute("style", "width:290px");
       });
       Array.prototype.forEach.call(mainImage, (el) => {
         //console.log("inside the class");
@@ -479,9 +479,9 @@ function windowResize() {
       window.innerWidth < 1230 &&
       smallLeft.style.display === "block"
     ) {
-      horiz_parent.style.width = "87%";
+      //horiz_parent.style.width = "87%";
       leftIcons.style.display = "none";
-      videosGrid.setAttribute("style", "grid-column-gap:2em");
+      //videosGrid.setAttribute("style", "grid-column-gap:2em");
 
       if (leftIcons.style.display === "block") {
         leftIcons.style.display = "block";
@@ -489,7 +489,7 @@ function windowResize() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.style.width = "290px";
+        //el.style.width = "290px";
       });
       Array.prototype.forEach.call(mainImage, (el) => {
         //console.log("inside the class");
@@ -497,7 +497,7 @@ function windowResize() {
       });
     } else if (window.innerWidth < 1230 && smallLeft.style.display === "block")
       if (window.innerWidth > 1289 && smallLeft.style.display === "none") {
-        horiz_parent.style.width = "93%";
+        horiz_parent.style.width = "90%";
         smallLeft.style.display = "block";
       } else if (window.innerWidth > 1289) {
         //horiz_parent.style.width = "83%";
@@ -557,12 +557,12 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.style.width = "265px";
+        //el.style.width = "265px";
       });
 
       Array.prototype.forEach.call(mainImage, (el) => {
         //console.log("inside the class");
-        el.style.height = "180px";
+        //el.style.height = "180px";
       });
     } else {
       console.log("inside else");
@@ -574,12 +574,12 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.removeAttribute("style", "width:265px");
+        //el.removeAttribute("style", "width:265px");
         //el.setAttribute("style", "width:260px");
       });
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.removeAttribute("style", "height:180px");
+        //el.removeAttribute("style", "height:180px");
       });
     }
 
@@ -728,6 +728,7 @@ function leftHoverEffect() {
 
         setTimeout(() => {
           elem.children[2].style.opacity = 1;
+          elem.children[2].style.border = "1px solid black";
         }, 1000);
 
         elem.children[2].classList.remove("hidden");
@@ -752,6 +753,7 @@ Array.prototype.forEach.call(right, (elem, index) => {
 
       setTimeout(() => {
         elem.children[0].style.opacity = 1;
+        elem.children[2].style.border = "1px solid black";
       }, 1000);
 
       elem.children[0].classList.remove("hidden");
