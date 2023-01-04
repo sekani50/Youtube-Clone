@@ -888,6 +888,14 @@ video {
   height: 90px;
 }
 
+.h-\[85\] {
+  height: 85;
+}
+
+.h-\[85px\] {
+  height: 85px;
+}
+
 .min-h-max {
   min-height: -moz-max-content;
   min-height: max-content;
