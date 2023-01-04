@@ -192,7 +192,7 @@ class Videos {
     ).innerHTML += ` <div class="video-container cursor-pointer">
                             <div class="image-box relative w-full">
                               <div class="w-full  max-md:h-[170px] max-[450px]:h-[195px] max-[1000px]:h-[215px] bg-cover max-lg:h-[180px] h-[165px] max-[600px]:h-[230px] max-xl:h-[184px] ">
-                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover object-center" src="${
+                                <img class="main-image w-full h-full rounded-[20px] max-[450px]:rounded-[0px] object-cover" src="${
                                   vid_data.snippet.thumbnails.medium.url
                                 }" />
                                 </div>
