@@ -880,6 +880,14 @@ video {
   height: 0.5rem;
 }
 
+.h-\[90\] {
+  height: 90;
+}
+
+.h-\[90px\] {
+  height: 90px;
+}
+
 .min-h-max {
   min-height: -moz-max-content;
   min-height: max-content;
