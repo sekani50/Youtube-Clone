@@ -293,7 +293,7 @@ class Videos {
 
                                 <div class="col-span-10 title-view relative ">
                                     <div class="relative title max-[450px]:w-[100%]">
-                                        <div class=" cursor-pointer sm:h-[47px] leading-7 mb-2 overflow-hidden  text-[14px] max-[450px]:w-[100%] pr-4 w-[200px]">
+                                        <div class=" cursor-pointer h-[47px] max-[450px]:h-auto leading-7 mb-2 overflow-hidden  text-[14px] max-[450px]:w-[100%] pr-4 w-[200px]">
                                             ${vid_data.snippet.localized.title}
 
                                         </div>
