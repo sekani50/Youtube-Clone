@@ -1022,6 +1022,12 @@ video {
   cursor: pointer;
 }
 
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .resize {
   resize: both;
 }
@@ -1233,6 +1239,34 @@ video {
 
 .bg-\[url\(\'\/icons\/feed\.png\'\)\] {
   background-image: url('/icons/feed.png');
+}
+
+.bg-\[url\(\'\.\/icons\/home-fill\.png\'\)\] {
+  background-image: url('./icons/home-fill.png');
+}
+
+.bg-\[url\(\'\.\/icons\/home\.png\'\)\] {
+  background-image: url('./icons/home.png');
+}
+
+.bg-\[url\(\'\/icons\/home\.png\'\)\] {
+  background-image: url('/icons/home.png');
+}
+
+.bg-\[url\(\'icons\/home\.png\'\)\] {
+  background-image: url('icons/home.png');
+}
+
+.bg-\[url\(\'\.icons\/home\.png\'\)\] {
+  background-image: url('.icons/home.png');
+}
+
+.bg-\[url\(\'\.\.icons\/home\.png\'\)\] {
+  background-image: url('..icons/home.png');
+}
+
+.bg-\[url\(\'\.\.\/icons\/home\.png\'\)\] {
+  background-image: url('../icons/home.png');
 }
 
 .bg-cover {
