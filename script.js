@@ -557,7 +557,7 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.style.width = "265px";
+        el.style.width = "295px";
       });
 
       Array.prototype.forEach.call(mainImage, (el) => {
@@ -574,7 +574,7 @@ function menuFunction() {
 
       Array.prototype.forEach.call(vidCont, (el) => {
         //console.log("inside the class");
-        el.removeAttribute("style", "width:265px");
+        el.removeAttribute("style", "width:295px");
         //el.setAttribute("style", "width:260px");
       });
       Array.prototype.forEach.call(vidCont, (el) => {
@@ -587,7 +587,7 @@ function menuFunction() {
       console.log("inside else");
       leftIcons.style.display = "block";
       smallLeft.style.display = "none";
-      horiz_parent.style.width = "83%";
+      horiz_parent.style.width = "80%";
     }
   });
 }
@@ -596,7 +596,7 @@ menuInLeftIcons.addEventListener("click", () => {
   if (leftIcons.style.display === "block") {
     leftIcons.style.display = "none";
     smallLeft.style.display = "block";
-    horiz_parent.style.width = "93%";
+    horiz_parent.style.width = "90%";
   }
 });
 

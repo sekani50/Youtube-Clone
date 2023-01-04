@@ -896,6 +896,14 @@ video {
   height: 85px;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-11 {
+  height: 2.75rem;
+}
+
 .min-h-max {
   min-height: -moz-max-content;
   min-height: max-content;
@@ -2017,6 +2025,18 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:top-0 {
+    top: 0px;
+  }
+
+  .md\:left-0 {
+    left: 0px;
+  }
+
+  .md\:z-20 {
+    z-index: 20;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
