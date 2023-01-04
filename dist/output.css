@@ -904,6 +904,22 @@ video {
   height: 2.75rem;
 }
 
+.h-\[8px\] {
+  height: 8px;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[8\] {
+  height: 8;
+}
+
+.h-\[83px\] {
+  height: 83px;
+}
+
 .min-h-max {
   min-height: -moz-max-content;
   min-height: max-content;

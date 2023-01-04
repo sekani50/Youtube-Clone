@@ -56,8 +56,6 @@ let leftIcons = document.querySelector(".left-icons-parent");
 class Videos {
   th = 1000;
   ml = 1000000;
-  windowResize = windowResize;
-  menuFunction = menuFunction;
   displayHoverEffect = displayHoverEffect;
   constructor(video) {
     this.th;
@@ -332,9 +330,9 @@ class Videos {
 
     this.displayHoverEffect();
 
-    this.menuFunction();
+    //this.menuFunction();
 
-    this.windowResize();
+    //this.windowResize();
   }
 }
 
@@ -357,34 +355,9 @@ function getChannels(data) {
 
   leftHoverEffect();
 }
-////////////////////////////scrolling effects in mobile view////////////////////////////////////
+
 let horizBtn = document.querySelector(".horizontal-btns");
 
-let vidBox = document.querySelector(".videos-box");
-
-let initialScroll = window.scrollY;
-//console.log(initialScroll);
-vidBox.addEventListener("scroll", () => {
-  let newScroll = vidBox.scrollTop;
-
-  let footer = document.querySelector(".footer");
-
-  if (document.body.clientWidth <= 450 && newScroll > initialScroll) {
-    footer.classList.remove("max-[450px]:block");
-  } else {
-    footer.classList.add("max-[450px]:block");
-  }
-
-  let head = document.querySelector(".top-head");
-
-  if (document.body.clientWidth <= 450 && newScroll > initialScroll + 150) {
-    head.classList.add("hidden");
-    horizBtn.classList.add("hidden");
-  } else {
-    head.classList.remove("hidden");
-    horizBtn.classList.remove("hidden");
-  }
-});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -435,170 +408,9 @@ leftIcons.addEventListener("click", () => {
 
 let videosGrid = document.querySelector(".videos");
 
-windowResize();
-
-function windowResize() {
-  let vidCont = document.querySelectorAll(".video-container");
-  let mainImage = document.querySelectorAll(".main-image");
-
-  window.addEventListener("resize", () => {
-    if (leftIcons.style.display !== "none") {
-      leftIcons.style.width = "block";
-    }
-
-    if (window.innerWidth > 650) {
-      searchBox.style.display = "flex";
-      firstDiv.style.display = "flex";
-      lastDiv.style.display = "flex";
-    } else {
-      searchBox.style.display = "none";
-      firstDiv.style.display = "flex";
-      lastDiv.style.display = "flex";
-    }
-
-    //console.log(window.innerWidth);
-
-    if (window.innerWidth > 1230 && smallLeft.style.display === "block") {
-      horiz_parent.style.width = "90%";
-      leftIcons.style.display = "none";
-      //videosGrid.removeAttribute("style", "grid-column-gap:2em");
-
-      if (leftIcons.style.display === "block") {
-        leftIcons.style.display = "block";
-      }
-
-      Array.prototype.forEach.call(vidCont, (el) => {
-        //console.log("inside the class");
-        //el.removeAttribute("style", "width:290px");
-      });
-      Array.prototype.forEach.call(mainImage, (el) => {
-        //console.log("inside the class");
-        el.removeAttribute("style", "height:170px");
-      });
-    } else if (
-      window.innerWidth < 1230 &&
-      smallLeft.style.display === "block"
-    ) {
-      //horiz_parent.style.width = "87%";
-      leftIcons.style.display = "none";
-      //videosGrid.setAttribute("style", "grid-column-gap:2em");
-
-      if (leftIcons.style.display === "block") {
-        leftIcons.style.display = "block";
-      }
-
-      Array.prototype.forEach.call(vidCont, (el) => {
-        //console.log("inside the class");
-        //el.style.width = "290px";
-      });
-      Array.prototype.forEach.call(mainImage, (el) => {
-        //console.log("inside the class");
-        el.style.height = "170px";
-      });
-    } else if (window.innerWidth < 1230 && smallLeft.style.display === "block")
-      if (window.innerWidth > 1289 && smallLeft.style.display === "none") {
-        horiz_parent.style.width = "90%";
-        smallLeft.style.display = "block";
-      } else if (window.innerWidth > 1289) {
-        //horiz_parent.style.width = "83%";
-      } else if (window.innerWidth < 1289 && window.innerWidth > 1024) {
-        smallLeft.style.display = "block";
-        //leftIcons.style.display = "block";
-        if (leftIcons.style.display === "block") {
-          leftIcons.style.display = "block";
-        }
-      } else if (window.innerWidth < 1024 && window.innerWidth > 768) {
-        smallLeft.style.display = "block";
-        //leftIcons.style.display = "block";
-        if (leftIcons.style.display === "block") {
-          leftIcons.style.display = "block";
-        }
-      } else if (window.innerWidth < 768) {
-        smallLeft.style.display = "none";
-        //leftIcons.style.display = "block";
-
-        if (leftIcons.style.display === "block") {
-          leftIcons.style.display = "block";
-        }
-      }
-  });
-}
-
-///////////////////////////////////menu button clicks/////////////////////////////////
-
-menuFunction();
-
-function menuFunction() {
-  let vidCont = document.querySelectorAll(".video-container");
-  let mainImage = document.querySelectorAll(".main-image");
-
-  menu.addEventListener("click", () => {
-    console.log("b4 if");
-
-    /*
-        Array.prototype.forEach.call(vidCont, (el) => {
-
-            console.log("inside the class");
-            //el.style.width = this.width;
 
 
-        })
-        */
 
-    if (leftIcons.style.display !== "none") {
-      //console.log("inside if");
-      horiz_parent.style.width = "90%";
-      leftIcons.style.display = "none";
-      smallLeft.style.display = "block";
-      //videosGrid.classList.remove("gap-x-\[8em\]");
-      //videosGrid.setAttribute('style', "grid-column-gap:4em");
-
-      //console.log(videosGrid.children[0].children[0]);
-
-      Array.prototype.forEach.call(vidCont, (el) => {
-        //console.log("inside the class");
-        //el.style.width = "265px";
-      });
-
-      Array.prototype.forEach.call(mainImage, (el) => {
-        //console.log("inside the class");
-        //el.style.height = "180px";
-      });
-    } else {
-      console.log("inside else");
-      leftIcons.style.display = "block";
-      smallLeft.style.display = "none";
-      horiz_parent.style.width = "80%";
-      //videosGrid.classList.add("gap-x-\[8em\]");
-      //videosGrid.removeAttribute('style', "grid-column-gap:4em");
-
-      Array.prototype.forEach.call(vidCont, (el) => {
-        //console.log("inside the class");
-        //el.removeAttribute("style", "width:265px");
-        //el.setAttribute("style", "width:260px");
-      });
-      Array.prototype.forEach.call(vidCont, (el) => {
-        //console.log("inside the class");
-        //el.removeAttribute("style", "height:180px");
-      });
-    }
-
-    if (window.innerWidth <= 1289) {
-      console.log("inside else");
-      leftIcons.style.display = "block";
-      smallLeft.style.display = "none";
-      horiz_parent.style.width = "80%";
-    }
-  });
-}
-let menuInLeftIcons = document.querySelector(".menu-in-left-icons");
-menuInLeftIcons.addEventListener("click", () => {
-  if (leftIcons.style.display === "block") {
-    leftIcons.style.display = "none";
-    smallLeft.style.display = "block";
-    horiz_parent.style.width = "90%";
-  }
-});
 
 ///////////////////////mimicking downloading and watching/////////////////////////////////////////////
 
@@ -753,7 +565,7 @@ Array.prototype.forEach.call(right, (elem, index) => {
 
       setTimeout(() => {
         elem.children[0].style.opacity = 1;
-        elem.children[2].style.border = "1px solid black";
+        elem.children[0].style.border = "1px solid black";
       }, 1000);
 
       elem.children[0].classList.remove("hidden");
@@ -797,3 +609,89 @@ el.addEventListener("click", () => {
 });
 
 
+
+/*
+
+windowResize();
+
+function windowResize() {
+  
+  let mainImage = document.querySelectorAll(".main-image");
+
+  window.addEventListener("resize", () => {
+    if (leftIcons.style.display !== "none") {
+      leftIcons.style.width = "block";
+    }
+
+    if (window.innerWidth > 650) {
+      searchBox.style.display = "flex";
+      firstDiv.style.display = "flex";
+      lastDiv.style.display = "flex";
+    } else {
+      searchBox.style.display = "none";
+      firstDiv.style.display = "flex";
+      lastDiv.style.display = "flex";
+    }
+
+    //console.log(window.innerWidth);
+
+    if (window.innerWidth > 1230 && smallLeft.style.display === "block") {
+      horiz_parent.style.width = "90%";
+      leftIcons.style.display = "none";
+      //videosGrid.removeAttribute("style", "grid-column-gap:2em");
+
+      if (leftIcons.style.display === "block") {
+        leftIcons.style.display = "block";
+      }
+
+    
+      Array.prototype.forEach.call(mainImage, (el) => {
+        //console.log("inside the class");
+        el.removeAttribute("style", "height:170px");
+      });
+    } else if (
+      window.innerWidth < 1230 &&
+      smallLeft.style.display === "block"
+    ) {
+      //horiz_parent.style.width = "87%";
+      leftIcons.style.display = "none";
+      //videosGrid.setAttribute("style", "grid-column-gap:2em");
+
+      if (leftIcons.style.display === "block") {
+        leftIcons.style.display = "block";
+      }
+
+     
+      Array.prototype.forEach.call(mainImage, (el) => {
+        //console.log("inside the class");
+        el.style.height = "170px";
+      });
+    } else if (window.innerWidth < 1230 && smallLeft.style.display === "block")
+      if (window.innerWidth > 1289 && smallLeft.style.display === "none") {
+        horiz_parent.style.width = "90%";
+        smallLeft.style.display = "block";
+      } else if (window.innerWidth > 1289) {
+        //horiz_parent.style.width = "83%";
+      } else if (window.innerWidth < 1289 && window.innerWidth > 1024) {
+        smallLeft.style.display = "block";
+        //leftIcons.style.display = "block";
+        if (leftIcons.style.display === "block") {
+          leftIcons.style.display = "block";
+        }
+      } else if (window.innerWidth < 1024 && window.innerWidth > 768) {
+        smallLeft.style.display = "block";
+        //leftIcons.style.display = "block";
+        if (leftIcons.style.display === "block") {
+          leftIcons.style.display = "block";
+        }
+      } else if (window.innerWidth < 768) {
+        smallLeft.style.display = "none";
+        //leftIcons.style.display = "block";
+
+        if (leftIcons.style.display === "block") {
+          leftIcons.style.display = "block";
+        }
+      }
+  });
+}
+*/
